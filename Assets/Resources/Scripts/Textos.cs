@@ -11,6 +11,8 @@ public class Textos : MonoBehaviour
     public GameObject siguiente1;
     public GameObject siguiente2;
     public Text textoCartel;
+    public GameObject gatillo;
+    public GameObject touchpad;
 
     public static string texto1 = "¡HOLA! Bienvenido al simulador de experiencias con Realidad Virtual con IMMERSE, creado por Mitica Technology. Utilice los gatillos traseros para seleccionar siguiente.";
     public static string texto2 = "Vamos a realizar una serie de actividades en un entorno virtual y queremos prepararte para que tu experiencia sea lo mejor posible, ¿preparado?";
@@ -32,6 +34,7 @@ public class Textos : MonoBehaviour
         cartel.gameObject.SetActive(true);
         siguiente.gameObject.SetActive(true);
         textoCartel.text = texto1;
+        gatillo.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -45,6 +48,7 @@ public class Textos : MonoBehaviour
         textoCartel.text = texto2;
         siguiente.gameObject.SetActive(false);
         siguiente1.gameObject.SetActive(true);
+        gatillo.gameObject.SetActive(false);
     }
 
     public void botonSiguiente1()
@@ -52,6 +56,7 @@ public class Textos : MonoBehaviour
         textoCartel.text = texto3;
         siguiente1.gameObject.SetActive(false);
         siguiente2.gameObject.SetActive(true);
+        touchpad.gameObject.SetActive(true);
     }
 
     public void botonSiguiente2()
@@ -59,5 +64,6 @@ public class Textos : MonoBehaviour
         canvas.gameObject.SetActive(false);
         cartel.gameObject.SetActive(false);
         siguiente2.gameObject.SetActive(false);
+        touchpad.gameObject.SetActive(false);
     }
 }

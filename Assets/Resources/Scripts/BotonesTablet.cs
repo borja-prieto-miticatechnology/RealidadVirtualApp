@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class BotonesTablet : MonoBehaviour
 {
+    public Material[] materialOFF;
+    public Material[] materialON;
+    public GameObject techo;
+
     public GameObject ventilacion;
     public GameObject tuberias;
     public GameObject cables;
@@ -84,6 +88,7 @@ public class BotonesTablet : MonoBehaviour
         cartel.gameObject.SetActive(true);
         siguiente7.gameObject.SetActive(true);
         textoCartel.text = Textos.texto9;
+        BotonTechoON();
     }
 
     public void botonSiguiente7()
@@ -97,5 +102,15 @@ public class BotonesTablet : MonoBehaviour
         canvas.gameObject.SetActive(false);
         cartel.gameObject.SetActive(false);
         siguiente8.gameObject.SetActive(false);
+    }
+
+    public void BotonTechoOFF()
+    {
+        techo.GetComponent<MeshRenderer>().materials = materialOFF;
+    }
+
+    public void BotonTechoON()
+    {
+        techo.GetComponent<MeshRenderer>().materials = materialON;
     }
 }

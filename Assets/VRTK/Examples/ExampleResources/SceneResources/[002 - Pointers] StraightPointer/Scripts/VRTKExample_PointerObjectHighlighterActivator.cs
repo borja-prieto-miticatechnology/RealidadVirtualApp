@@ -27,6 +27,8 @@
         public GameObject imagenHUD;
         public GameObject imagenO2;
 
+        public GameObject menu;
+
         protected virtual void OnEnable()
         {
             pointer = (pointer == null ? GetComponent<VRTK_DestinationMarker>() : pointer);
@@ -141,6 +143,7 @@
             textoCartel.text = Textos.texto7;
             siguiente5.gameObject.SetActive(false);
             siguiente6.gameObject.SetActive(true);
+            menu.gameObject.SetActive(true);
         }
 
         public void botonSiguiente6()
@@ -148,6 +151,7 @@
             canvas.gameObject.SetActive(false);
             cartel.gameObject.SetActive(false);
             siguiente6.gameObject.SetActive(false);
+            menu.gameObject.SetActive(false);
         }
 
         public void botonSiguiente9()

@@ -12,6 +12,8 @@ public class Victoria : MonoBehaviour
     public GameObject siguiente3;
     public GameObject siguiente4;
 
+    public GameObject gatillo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,7 @@ public class Victoria : MonoBehaviour
         textoCartel.text = Textos.texto5;
         siguiente3.gameObject.SetActive(false);
         siguiente4.gameObject.SetActive(true);
+        gatillo.gameObject.SetActive(true);
     }
 
     public void botonSiguiente4()
@@ -61,5 +64,6 @@ public class Victoria : MonoBehaviour
         canvas.gameObject.SetActive(false);
         cartel.gameObject.SetActive(false);
         siguiente4.gameObject.SetActive(false);
+        gatillo.gameObject.SetActive(false);
     }
 }
