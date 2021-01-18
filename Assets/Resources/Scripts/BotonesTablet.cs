@@ -8,6 +8,7 @@ public class BotonesTablet : MonoBehaviour
     public Material[] materialOFF;
     public Material[] materialON;
     public GameObject techo;
+    public GameObject props;
 
     public GameObject ventilacion;
     public GameObject tuberias;
@@ -107,10 +108,12 @@ public class BotonesTablet : MonoBehaviour
     public void BotonTechoOFF()
     {
         techo.GetComponent<MeshRenderer>().materials = materialOFF;
+        props.gameObject.SetActive(false);
     }
 
     public void BotonTechoON()
     {
         techo.GetComponent<MeshRenderer>().materials = materialON;
+        props.gameObject.SetActive(true);
     }
 }
