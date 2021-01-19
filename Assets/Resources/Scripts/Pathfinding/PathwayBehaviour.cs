@@ -6,6 +6,7 @@ public class PathwayBehaviour : MonoBehaviour
 {
     public PathCreator pathC;
     public bool isDeleting;
+    public float waitTime;
 
     private void OnTriggerExit(Collider other)
     {
@@ -20,7 +21,7 @@ public class PathwayBehaviour : MonoBehaviour
     IEnumerator DeleteSegment()
     {
         pathC.bezierPath.DeleteSegment(0);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitTime);
         isDeleting = false;
     }
 }
