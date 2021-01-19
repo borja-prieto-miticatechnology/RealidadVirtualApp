@@ -16,6 +16,11 @@ TagManager:
   - victoria
   - o2
   - guia
+  - ExcludeTeleport
+  - projectile
+  - Fire
+  - FxTemporaire
+  - TeleportIgnore
   layers:
   - Default
   - TransparentFX
@@ -26,7 +31,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - Wall
   - 
   - 
   - 
