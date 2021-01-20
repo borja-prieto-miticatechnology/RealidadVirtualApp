@@ -29,6 +29,19 @@
 
         public GameObject menu;
 
+        public static bool activarCrono=false;
+        public float tiempo = 0;
+        public GameObject canvasTiempo;
+        public Text textoTiempo;
+
+        void Update()
+        {
+            if (activarCrono == true)
+            {
+                ContadorTiempo();
+            }
+        }
+
         protected virtual void OnEnable()
         {
             pointer = (pointer == null ? GetComponent<VRTK_DestinationMarker>() : pointer);
@@ -160,6 +173,14 @@
             canvas.gameObject.SetActive(false);
             cartel.gameObject.SetActive(false);
             siguiente9.gameObject.SetActive(false);
+            canvasTiempo.gameObject.SetActive(true);
+            activarCrono = true;
+        }
+
+        void ContadorTiempo()
+        {
+            tiempo += Time.deltaTime;
+            textoTiempo.text = tiempo.ToString("f0") + " s";
         }
     }
 }

@@ -34,6 +34,7 @@ public class Victoria : MonoBehaviour
             canvas.gameObject.SetActive(true);
             cartel.gameObject.SetActive(true);
             textoCartel.text = Textos.texto12;
+            VRTK.Examples.VRTKExample_PointerObjectHighlighterActivator.activarCrono = false;
         }
 
         else if (this.gameObject.tag == "flecha")
