@@ -20,6 +20,7 @@ public class BotonesTablet : MonoBehaviour
     public GameObject siguiente7;
     public GameObject siguiente8;
     public GameObject tablet;
+    public GameObject mascara;
 
     public Text textoCartel;
 
@@ -97,6 +98,7 @@ public class BotonesTablet : MonoBehaviour
         textoCartel.text = Textos.texto10;
         siguiente7.gameObject.SetActive(false);
         siguiente8.gameObject.SetActive(true);
+        mascara.gameObject.SetActive(true);
     }
     public void botonSiguiente8()
     {
