@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Victoria : MonoBehaviour
 {
@@ -26,10 +27,11 @@ public class Victoria : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (this.gameObject.tag == "victoria")
         {
+            botonCambiarAMenu();
             this.gameObject.SetActive(false);
             canvas.gameObject.SetActive(true);
             cartel.gameObject.SetActive(true);
@@ -66,5 +68,19 @@ public class Victoria : MonoBehaviour
         cartel.gameObject.SetActive(false);
         siguiente4.gameObject.SetActive(false);
         gatillo.gameObject.SetActive(false);
+    }
+
+    public void botonCambiarAMenu()
+    {
+        StartCoroutine("CambiarAMenu");
+    }
+
+    IEnumerator CambiarAMenu()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
+
+        yield return new WaitForSeconds(2f);
+        StopCoroutine("CambiarAMenu");
     }
 }
