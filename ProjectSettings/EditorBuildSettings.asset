@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/office building.unity
     guid: cc855a45dc62bb8479a2ca85a707b08a
+  - enabled: 1
+    path: Assets/Resources/Scenes/MenuFinal.unity
+    guid: ba88a7734a17abd49b8380dc3d977c40
   m_configObjects: {}

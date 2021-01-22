@@ -22,6 +22,11 @@ public class CambioEscena : MonoBehaviour
         StartCoroutine("CambiarEscena");
     }
 
+    public void BotonIrAMenu()
+    {
+        StartCoroutine("CambiarAMenu");
+    }
+
     IEnumerator CambiarEscena()
     {
         yield return new WaitForSeconds(2f);
@@ -29,5 +34,14 @@ public class CambioEscena : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         StopCoroutine("CambiarEscena");
+    }
+
+    IEnumerator CambiarAMenu()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
+
+        yield return new WaitForSeconds(2f);
+        StopCoroutine("CambiarAMenu");
     }
 }

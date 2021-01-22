@@ -37,8 +37,9 @@ public class Victoria : MonoBehaviour
     {
         if (this.gameObject.tag == "victoria")
         {
+            StartCoroutine("CambiarAFinal");
             // this.gameObject.SetActive(false);
-            canvasFinal.gameObject.SetActive(true);
+            // canvasFinal.gameObject.SetActive(true);
             // cartel.gameObject.SetActive(true);
             // textoCartel.text = Textos.texto12;
             VRTK.Examples.VRTKExample_PointerObjectHighlighterActivator.activarCrono = false;
@@ -81,14 +82,14 @@ public class Victoria : MonoBehaviour
         StartCoroutine("CambiarAMenu");
     }
 
-    IEnumerator CambiarAMenu()
+    IEnumerator CambiarAFinal()
     {
         FadeOut.OnStartFade(Color.black, 2f, true);
 
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
 
         yield return new WaitForSeconds(2f);
-        StopCoroutine("CambiarAMenu");
+        StopCoroutine("CambiarAFinal");
     }
 }
