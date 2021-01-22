@@ -7,6 +7,7 @@ public class BotonesTablet : MonoBehaviour
 {
     public Material[] materialOFF;
     public Material[] materialON;
+
     public GameObject techo;
     public GameObject props;
 
@@ -31,13 +32,12 @@ public class BotonesTablet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       // BotonFormacion2();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
     
     public void BotonVentilacion()
@@ -110,12 +110,14 @@ public class BotonesTablet : MonoBehaviour
     public void BotonTechoOFF()
     {
         techo.GetComponent<MeshRenderer>().materials = materialOFF;
+        //techo.GetComponent<MeshRenderer>().materials[10] = TransparentTechoMaterial;
         props.gameObject.SetActive(false);
     }
 
     public void BotonTechoON()
     {
         techo.GetComponent<MeshRenderer>().materials = materialON;
+       // techo.GetComponent<MeshRenderer>().materials[10] = OriginalTechoMaterial;
         props.gameObject.SetActive(true);
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PathCreation.Examples {
 
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
     public class PathPlacer : PathSceneTool {
 
         public GameObject prefab;
@@ -11,6 +11,11 @@ namespace PathCreation.Examples {
         public float spacing = 3;
 
         const float minSpacing = .1f;
+
+        private void OnEnable()
+        {
+            Generate();
+        }
 
         void Generate () {
             if (pathCreator != null && prefab != null && holder != null) {
@@ -33,7 +38,7 @@ namespace PathCreation.Examples {
         void DestroyObjects () {
             int numChildren = holder.transform.childCount;
             for (int i = numChildren - 1; i >= 0; i--) {
-                DestroyImmediate (holder.transform.GetChild (i).gameObject, false);
+                Destroy(holder.transform.GetChild (i).gameObject);
             }
         }
 

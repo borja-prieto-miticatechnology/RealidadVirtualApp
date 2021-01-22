@@ -14,6 +14,8 @@ public class Victoria : MonoBehaviour
     public GameObject siguiente4;
 
     public GameObject gatillo;
+    
+    public SteamVR_Fade FadeOut;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +33,13 @@ public class Victoria : MonoBehaviour
     {
         if (this.gameObject.tag == "victoria")
         {
-            botonCambiarAMenu();
-            this.gameObject.SetActive(false);
-            canvas.gameObject.SetActive(true);
-            cartel.gameObject.SetActive(true);
-            textoCartel.text = Textos.texto12;
-            VRTK.Examples.VRTKExample_PointerObjectHighlighterActivator.activarCrono = false;
+            StartCoroutine(CambiarAMenu());
+            // this.gameObject.SetActive(false);
+            // canvas.gameObject.SetActive(true);
+            // cartel.gameObject.SetActive(true);
+            // textoCartel.text = Textos.texto12;
+            // VRTK.Examples.VRTKExample_PointerObjectHighlighterActivator.activarCrono = false;
+            
         }
 
         else if (this.gameObject.tag == "flecha")
@@ -77,6 +80,8 @@ public class Victoria : MonoBehaviour
 
     IEnumerator CambiarAMenu()
     {
+        FadeOut.OnStartFade(Color.black, 2f, true);
+
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(0);
 
