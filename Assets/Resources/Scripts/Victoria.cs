@@ -8,12 +8,16 @@ public class Victoria : MonoBehaviour
 {
     public GameObject canvas;
     public GameObject cartel;
+    public GameObject canvasFinal;
     public Text textoCartel;
 
     public GameObject siguiente3;
     public GameObject siguiente4;
 
     public GameObject gatillo;
+
+    public GameObject fuegosArtif;
+    public GameObject spawnFuegosArtif;
     
     public SteamVR_Fade FadeOut;
 
@@ -33,13 +37,12 @@ public class Victoria : MonoBehaviour
     {
         if (this.gameObject.tag == "victoria")
         {
-            StartCoroutine(CambiarAMenu());
             // this.gameObject.SetActive(false);
-            // canvas.gameObject.SetActive(true);
+            canvasFinal.gameObject.SetActive(true);
             // cartel.gameObject.SetActive(true);
             // textoCartel.text = Textos.texto12;
-            // VRTK.Examples.VRTKExample_PointerObjectHighlighterActivator.activarCrono = false;
-            
+            VRTK.Examples.VRTKExample_PointerObjectHighlighterActivator.activarCrono = false;
+            GameObject newFuegosArtif = (GameObject)Instantiate(fuegosArtif, spawnFuegosArtif.transform.position, spawnFuegosArtif.transform.rotation);
         }
 
         else if (this.gameObject.tag == "flecha")
