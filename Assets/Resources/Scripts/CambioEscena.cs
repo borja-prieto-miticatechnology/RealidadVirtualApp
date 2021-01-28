@@ -20,11 +20,17 @@ public class CambioEscena : MonoBehaviour
     public void BotonCambiarEscena()
     {
         StartCoroutine("CambiarEscena");
+        Debug.Log("pulso el boton");
     }
 
     public void BotonIrAMenu()
     {
         StartCoroutine("CambiarAMenu");
+    }
+
+    public void blabla()
+    {
+        Debug.Log("blabla");
     }
 
     IEnumerator CambiarEscena()

@@ -128,7 +128,7 @@
             string targetName = (target ? target.name : "<NO VALID TARGET>");
             string colliderName = (raycastHit.collider ? raycastHit.collider.name : "<NO VALID COLLIDER>");
             VRTK_Logger.Info("Controller on index '" + index + "' is " + action + " at a distance of " + distance + " on object named [" + targetName + "] on the collider named [" + colliderName + "] - the pointer tip position is/was: " + tipPosition);
-            elementoSeleccionado.text = "Elemento seleccionado: " + targetName;
+            //elementoSeleccionado.text = "Elemento seleccionado: " + targetName;
             if(raycastHit.transform.tag == "hud")
             {
                 imagenHUD.gameObject.SetActive(true);
@@ -148,6 +148,13 @@
                 cartel.gameObject.SetActive(true);
                 siguiente9.gameObject.SetActive(true);
                 textoCartel.text = Textos.texto11;
+            }
+
+            if (raycastHit.collider.GetComponent<ScriptPruebaBotones>())
+            {
+                //raycastHit.transform.GetComponent<ScriptPruebaBotones>().EventoPrueba.Invoke();
+                raycastHit.collider.GetComponent<ScriptPruebaBotones>().EventoPrueba.Invoke();
+                Debug.Log("pulsandoboton");
             }
         }
 
