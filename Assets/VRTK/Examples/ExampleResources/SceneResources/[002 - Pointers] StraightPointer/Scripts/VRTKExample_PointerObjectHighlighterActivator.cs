@@ -3,6 +3,7 @@
     using UnityEngine;
     using VRTK.Highlighters;
     using UnityEngine.UI;
+    using System.Collections;
 
     public class VRTKExample_PointerObjectHighlighterActivator : MonoBehaviour
     {
@@ -160,10 +161,7 @@
 
         public void botonSiguiente5()
         {
-            textoCartel.text = Textos.texto7;
-            siguiente5.gameObject.SetActive(false);
-            siguiente6.gameObject.SetActive(true);
-            menu.gameObject.SetActive(true);
+            StartCoroutine("SiguienteButton5");
         }
 
         public void botonSiguiente6()
@@ -188,6 +186,16 @@
         {
             tiempo += Time.deltaTime;
             textoTiempo.text = tiempo.ToString("f0") + " s";
+        }
+
+        IEnumerator SiguienteButton5()
+        {
+            textoCartel.text = Textos.texto7;
+            menu.gameObject.SetActive(true);
+            siguiente5.gameObject.SetActive(false);
+            yield return new WaitForSeconds(1f);
+            siguiente6.gameObject.SetActive(true);
+            StopCoroutine("SiguienteButton5");
         }
     }
 }

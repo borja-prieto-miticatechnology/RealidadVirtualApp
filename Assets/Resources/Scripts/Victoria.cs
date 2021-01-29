@@ -63,10 +63,7 @@ public class Victoria : MonoBehaviour
 
     public void botonSiguiente3()
     {
-        textoCartel.text = Textos.texto5;
-        siguiente3.gameObject.SetActive(false);
-        siguiente4.gameObject.SetActive(true);
-        gatillo.gameObject.SetActive(true);
+        StartCoroutine("SiguienteButton3");
     }
 
     public void botonSiguiente4()
@@ -91,5 +88,15 @@ public class Victoria : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         StopCoroutine("CambiarAFinal");
+    }
+
+    IEnumerator SiguienteButton3()
+    {
+        textoCartel.text = Textos.texto5;
+        gatillo.gameObject.SetActive(true);
+        siguiente3.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        siguiente4.gameObject.SetActive(true);
+        StopCoroutine("SiguienteButton3");
     }
 }

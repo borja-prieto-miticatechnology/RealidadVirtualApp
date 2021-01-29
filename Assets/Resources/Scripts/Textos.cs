@@ -45,18 +45,12 @@ public class Textos : MonoBehaviour
     
     public void botonSiguiente()
     {
-        textoCartel.text = texto2;
-        siguiente.gameObject.SetActive(false);
-        siguiente1.gameObject.SetActive(true);
-        gatillo.gameObject.SetActive(false);
+        StartCoroutine("SiguienteButton");
     }
 
     public void botonSiguiente1()
     {
-        textoCartel.text = texto3;
-        siguiente1.gameObject.SetActive(false);
-        siguiente2.gameObject.SetActive(true);
-        touchpad.gameObject.SetActive(true);
+        StartCoroutine("SiguienteButton1");
     }
 
     public void botonSiguiente2()
@@ -65,5 +59,25 @@ public class Textos : MonoBehaviour
         cartel.gameObject.SetActive(false);
         siguiente2.gameObject.SetActive(false);
         touchpad.gameObject.SetActive(false);
+    }
+
+    IEnumerator SiguienteButton()
+    {
+        textoCartel.text = texto2;
+        siguiente.gameObject.SetActive(false);
+        gatillo.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        siguiente1.gameObject.SetActive(true);
+        StopCoroutine("SiguienteButton");
+    }
+
+    IEnumerator SiguienteButton1()
+    {
+        textoCartel.text = texto3;
+        siguiente1.gameObject.SetActive(false);
+        touchpad.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        siguiente2.gameObject.SetActive(true);
+        StopCoroutine("SiguienteButton1");
     }
 }

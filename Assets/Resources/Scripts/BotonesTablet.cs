@@ -120,4 +120,14 @@ public class BotonesTablet : MonoBehaviour
        // techo.GetComponent<MeshRenderer>().materials[10] = OriginalTechoMaterial;
         props.gameObject.SetActive(true);
     }
+
+    IEnumerator Siguiente7Button()
+    {
+        textoCartel.text = Textos.texto10;
+        siguiente7.gameObject.SetActive(false);
+        mascara.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        siguiente8.gameObject.SetActive(true);
+        StopCoroutine("SiguienteButton");
+    }
 }
